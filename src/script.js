@@ -13,7 +13,7 @@ function updateStatus() {
         {
             btnedit.disabled = true
             checkEdit = false
-            btnedit.textContent = 'Редактировать'
+            btnedit.textContent = 'Удалять'
         }
         else if (tasklist.children.length > 0)
         {
@@ -121,8 +121,8 @@ btnedit.addEventListener('click', function(){
     }
     else if (checkEdit === true)
     {
-        // меняем текст кнопки на Редактировать
-        btnedit.textContent = "Редактировать"
+        // меняем текст кнопки на Удалять
+        btnedit.textContent = "Удалять"
         // Назначаем статус false, тоесть режим редактирования выключен
         checkEdit = false
         // простенький цикл, так как кнопок удаления у нас много, поэтому нужно всем менять стиль, а делается это через цикл foreach
