@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com');
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+.main {
+    display: flex;
+    background-color: antiquewhite;
+    width: 450px;
+    height: 600px;
+    border-radius: 10px;
+    margin: 20px 15px 20px 15px;
+    gap: 20px;
+    flex-direction: column;
+    padding: 20px;
+}
+.input-label {
+    margin: 10px 5px 0px 5px;
+}
+.nav {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    justify-content: flex-start;
+}
+.nav input {
+    flex: 1;
+    min-width: 0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: azure;
+    border: 3px solid azure;
+}
+.nav input[type="text"]:focus {
+    border-color: rgb(154, 255, 255);
+    outline: none;
+}
+.nav button {
+    border: solid 5px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+    border-color: aqua;
+    background-color: aqua;
+    cursor: pointer;
+}
+.nav button:not(:disabled):hover {
+    background-color: rgb(0, 234, 234);
+    border-color: rgb(0, 234, 234);
+    transition: all 0.2s ease-in-out, transition 0.2s;
+    transform: translateY(1px);
+}
+.edit:disabled {
+    border-color: rgb(100, 170, 170);
+    background-color: rgb(100, 170, 170);
+}
+.main_info {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+/* Список задач */
+.task-list {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    counter-reset: task-counter;
+}
+.list-item {
+    display: flex;
+    margin: 5px 0;
+    padding: 4px 0;
+    text-align: left;
+    align-items: center;
+    gap: 8px;
+}
+.list-item::before {
+    content: counter(task-counter) ". ";
+    counter-increment: task-counter;
+  }
+.list-item img {
+    flex-shrink: 0;
+  }
+.delete_btn {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: none;
+}
+/* ---------------- */
+@media (max-width: 424px) {
+    .main {
+        width: 90vw;
+    }
+}
